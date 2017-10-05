@@ -10,7 +10,7 @@ fn log_params(req: &mut Request) -> IronResult<Response> {
     // Extract the decoded data as hashmap, using the UrlEncodedQuery plugin.
     match req.get_ref::<UrlEncodedQuery>() {
         Ok(ref hashmap) => println!("Parsed GET request query string:\n {:?}", hashmap),
-        Err(ref e) => println!("{:?}", e)
+        Err(ref e) => println!("{:?}", e),
     };
 
     Ok(Response::with((status::Ok, "Hello!")))

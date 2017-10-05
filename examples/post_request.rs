@@ -9,7 +9,7 @@ use urlencoded::UrlEncodedBody;
 fn log_post_data(req: &mut Request) -> IronResult<Response> {
     match req.get_ref::<UrlEncodedBody>() {
         Ok(ref hashmap) => println!("Parsed POST request body:\n {:?}", hashmap),
-        Err(ref e) => println!("{:?}", e)
+        Err(ref e) => println!("{:?}", e),
     };
 
     Ok(Response::with((status::Ok, "Hello!")))
